@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<% content_for(:modal_title, 'Article') %>
 
-<%= render @article %>
+<% content_for(:modal_body) do %>
+  <%= render @article %>
+<% end %>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
-</div>
+<% content_for(:modal_footer) do %>
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <%= link_to "Edit", [:edit, @article], class: 'btn btn-primary' %>
+  <%= button_to "Destroy", @article, method: :delete, class: 'btn btn-danger', form: { data: { turbo_frame: '_top' } } %>
+<% end %>

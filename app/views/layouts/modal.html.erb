@@ -1,0 +1,20 @@
+<%= turbo_frame_tag(modal_frame_id) do %>
+  <div class="modal" tabindex="-1" data-controller="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <%= turbo_frame_tag('turbo_modal_content') do %>
+          <div class="modal-header">
+            <h5 class="modal-title"><%= yield(:modal_title) %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= yield(:modal_body) %>
+          </div>
+          <div class="modal-footer">
+            <%= yield(:modal_footer) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

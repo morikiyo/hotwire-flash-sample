@@ -13,6 +13,7 @@
   <body>
     <main class="container">
       <%= yield %>
+      <%= turbo_frame_tag(modal_frame_id) %>
     </main>
   </body>
 </html>

@@ -6,9 +6,9 @@
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
-      <%= link_to "Show this article", article %>
+      <%= link_to "Show this article", article, data: { turbo_frame: modal_frame_id } %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<%= link_to "New article", new_article_path, data: { turbo_frame: modal_frame_id } %>

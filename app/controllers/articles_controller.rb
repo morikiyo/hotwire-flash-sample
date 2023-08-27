@@ -6,13 +6,16 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    render layout: 'modal'
   end
 
   def new
     @article = Article.new
+    render layout: 'modal'
   end
 
   def edit
+    render layout: 'modal'
   end
 
   def create
@@ -21,7 +24,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to article_url(@article), notice: "Article was successfully created."
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, layout: 'modal'
     end
   end
 
