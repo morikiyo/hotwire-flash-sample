@@ -2,6 +2,7 @@
   <%= article.title %>
 </div>
 
-<div>
+<div class="d-flex align-items-center gap-3">
   <%= link_to "Show", article, data: { turbo_frame: 'article_wrapper' } %>
+  <%= button_to 'DELETE', article, method: :delete, class: 'btn btn-danger btn-sm', data: { turbo_confirm: 'Are you sure?' } %>
 </div>
