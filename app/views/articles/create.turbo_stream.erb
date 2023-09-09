@@ -1,0 +1,5 @@
+<%= turbo_stream.append('articles', @article) %>
+
+<%= turbo_stream.update('article_wrapper') do %>
+  <%= link_to "New article", new_article_path %>
+<% end %>
