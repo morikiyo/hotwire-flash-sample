@@ -1,5 +1,7 @@
 <%= turbo_stream.append('articles') do %>
-  <%= render 'article_in_list', article: %>
+  <div id="<%= dom_id(@article) %>" class="mb-2">
+    <%= render 'article_in_list', article: @article %>
+  </div>
 <% end %>
 
 <%= turbo_stream.update('article_wrapper') do %>

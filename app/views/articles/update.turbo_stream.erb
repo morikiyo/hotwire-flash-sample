@@ -1,0 +1,7 @@
+<%= turbo_stream.update(@article) do %>
+  <%= render 'article_in_list', article: @article %>
+<% end %>
+
+<%= turbo_stream.update('article_wrapper') do %>
+  <%= link_to "New article", new_article_path %>
+<% end %>

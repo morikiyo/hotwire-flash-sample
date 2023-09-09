@@ -4,7 +4,9 @@
 
 <div id="articles">
   <% @articles.each do |article| %>
-    <%= render 'article_in_list', article: %>
+    <div id="<%= dom_id(article) %>" class="mb-2">
+      <%= render 'article_in_list', article: %>
+    </div>
   <% end %>
 </div>
 
