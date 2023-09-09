@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
   private
 
     def set_article
-      @article = Article.find(params[:id])
+      @article = Article.find(params[:id]) if params[:id] != 'blank'
     end
 
     def article_params

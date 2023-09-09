@@ -1,15 +1,15 @@
-<div id="<%= dom_id article %>" class="mb-2">
+<div>
   <p class="mb-0">
     <strong>Title:</strong>
     <%= article.title %>
   </p>
 
-  <p class="mb-0">
+  <p class="mb-2">
     <strong>Content:</strong>
     <%= article.content %>
   </p>
 
   <p class="mb-0">
-    <%= link_to "Show this article", article %>
+    <%= link_to "Close", article_path('blank'), data: { turbo_frame: 'article_wrapper' } %>
   </p>
 </div>
