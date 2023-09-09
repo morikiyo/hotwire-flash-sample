@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Articles</h1>
 
-<div id="articles">
+<ul id="articles" class="list-group">
   <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
+    <%= render 'article_list_item', article: %>
   <% end %>
-</div>
+</ul>
 
-<%= link_to "New article", new_article_path %>
+<hr />
+
+<%= turbo_frame_tag 'article_wrapper' do %>
+  <%= link_to "New article", new_article_path %>
+<% end %>
