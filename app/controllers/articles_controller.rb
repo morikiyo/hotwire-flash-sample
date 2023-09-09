@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      flash.notice = 'Article was successfully created.'
+      flash.now.notice = 'Article was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash.notice = 'Article was successfully updated.'
+      flash.now.notice = 'Article was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash.notice = 'Article was successfully destroyed.'
+    flash.now.alert = 'Article was successfully destroyed.'
   end
 
   private
