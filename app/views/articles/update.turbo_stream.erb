@@ -1,5 +1,5 @@
 <%= turbo_stream.update(@article) do %>
-  <%= render 'article_in_list', article: @article %>
+  <%= render 'article_list_content', article: @article %>
 <% end %>
 
 <%= turbo_stream.update('article_wrapper') do %>
